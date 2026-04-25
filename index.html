@@ -1,0 +1,1242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Muhammad Ubaid Khan | BI Consultant & Content Writer</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --cream:#fdf8f3;
+  --warm:#f5ede0;
+  --rose:#e8d5c4;
+  --brown:#8b6f5e;
+  --dark:#2c1f17;
+  --charcoal:#3d2e26;
+  --gold:#c9a96e;
+  --gold2:#e8c99a;
+  --text:#3d2e26;
+  --muted:#8b7b70;
+  --border:#e0d0c0;
+  --white:#ffffff;
+  --accent:#9b6b4e;
+}
+html{scroll-behavior:smooth;}
+body{
+  background:var(--cream);
+  color:var(--text);
+  font-family:'Jost',sans-serif;
+  font-weight:300;
+  overflow-x:hidden;
+}
+::-webkit-scrollbar{width:4px;}
+::-webkit-scrollbar-track{background:var(--warm);}
+::-webkit-scrollbar-thumb{background:var(--gold);border-radius:2px;}
+
+/* NAV */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  padding:24px 48px;
+  display:flex;align-items:center;justify-content:space-between;
+  background:rgba(253,248,243,0.92);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--border);
+  transition:all 0.3s;
+}
+.nav-logo{
+  font-family:'Cormorant Garamond',serif;
+  font-size:20px;font-weight:600;
+  color:var(--dark);letter-spacing:1px;
+  text-decoration:none;
+}
+.nav-links{display:flex;gap:36px;list-style:none;}
+.nav-links a{
+  font-size:13px;font-weight:500;letter-spacing:2px;
+  text-transform:uppercase;color:var(--muted);
+  text-decoration:none;transition:color 0.2s;
+}
+.nav-links a:hover{color:var(--dark);}
+.nav-btn{
+  font-size:12px;font-weight:600;letter-spacing:2px;
+  text-transform:uppercase;color:var(--dark);
+  text-decoration:none;padding:12px 28px;
+  border:1px solid var(--dark);border-radius:2px;
+  transition:all 0.3s;
+}
+.nav-btn:hover{background:var(--dark);color:var(--cream);}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;}
+.hamburger span{width:22px;height:1px;background:var(--dark);transition:all 0.3s;}
+
+/* MOBILE MENU */
+.mobile-menu{
+  display:none;position:fixed;inset:0;
+  background:var(--cream);z-index:99;
+  flex-direction:column;align-items:center;justify-content:center;gap:40px;
+}
+.mobile-menu.open{display:flex;}
+.mobile-menu a{font-family:'Cormorant Garamond',serif;font-size:32px;color:var(--dark);text-decoration:none;}
+.close-btn{position:absolute;top:24px;right:32px;background:none;border:none;font-size:28px;cursor:pointer;color:var(--dark);}
+
+/* HERO */
+.hero{
+  min-height:100vh;
+  display:flex;align-items:center;
+  padding:120px 48px 80px;
+  position:relative;overflow:hidden;
+}
+.hero::before{
+  content:'';position:absolute;
+  top:0;right:0;width:45%;height:100%;
+  background:var(--warm);
+  clip-path:polygon(15% 0,100% 0,100% 100%,0% 100%);
+  z-index:0;
+}
+.hero-inner{
+  max-width:1200px;margin:0 auto;width:100%;
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:80px;align-items:center;position:relative;z-index:1;
+}
+.hero-tag{
+  font-size:11px;letter-spacing:4px;text-transform:uppercase;
+  color:var(--gold);font-weight:600;margin-bottom:20px;
+  display:flex;align-items:center;gap:12px;
+}
+.hero-tag::before{content:'';width:40px;height:1px;background:var(--gold);}
+.hero h1{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(48px,5vw,72px);
+  font-weight:600;line-height:1.1;
+  color:var(--dark);margin-bottom:16px;
+}
+.hero h1 em{font-style:italic;color:var(--accent);}
+.hero-sub{
+  font-size:17px;line-height:1.9;
+  color:var(--muted);margin-bottom:40px;
+  max-width:480px;font-weight:300;
+}
+.hero-btns{display:flex;gap:16px;flex-wrap:wrap;}
+.btn-dark{
+  background:var(--dark);color:var(--cream);
+  padding:18px 36px;font-size:12px;
+  font-weight:600;letter-spacing:2px;text-transform:uppercase;
+  text-decoration:none;border:1px solid var(--dark);
+  transition:all 0.3s;font-family:'Jost',sans-serif;
+  cursor:pointer;border-radius:2px;
+}
+.btn-dark:hover{background:transparent;color:var(--dark);}
+.btn-outline{
+  background:transparent;color:var(--dark);
+  padding:18px 36px;font-size:12px;
+  font-weight:600;letter-spacing:2px;text-transform:uppercase;
+  text-decoration:none;border:1px solid var(--dark);
+  transition:all 0.3s;font-family:'Jost',sans-serif;
+  cursor:pointer;border-radius:2px;
+}
+.btn-outline:hover{background:var(--dark);color:var(--cream);}
+.hero-right{position:relative;}
+.hero-avatar-wrap{
+  width:420px;height:520px;
+  background:linear-gradient(160deg,var(--rose),var(--warm));
+  border-radius:4px;
+  display:flex;align-items:center;justify-content:center;
+  position:relative;overflow:hidden;
+  border:1px solid var(--border);
+}
+.hero-avatar-wrap::before{
+  content:'MUK';
+  font-family:'Cormorant Garamond',serif;
+  font-size:180px;font-weight:700;
+  color:rgba(139,111,94,0.08);
+  position:absolute;
+}
+.hero-avatar-icon{font-size:120px;position:relative;z-index:1;}
+.hero-badge{
+  position:absolute;bottom:-20px;left:-20px;
+  background:var(--dark);color:var(--cream);
+  padding:24px 28px;border-radius:4px;
+  font-family:'Cormorant Garamond',serif;
+}
+.hero-badge-num{font-size:36px;font-weight:600;display:block;}
+.hero-badge-text{font-size:13px;opacity:0.7;margin-top:2px;}
+.hero-stats{
+  display:flex;gap:40px;margin-top:48px;
+  padding-top:48px;border-top:1px solid var(--border);
+}
+.hero-stat-num{
+  font-family:'Cormorant Garamond',serif;
+  font-size:36px;font-weight:600;color:var(--dark);display:block;
+}
+.hero-stat-label{font-size:12px;color:var(--muted);letter-spacing:1px;margin-top:2px;}
+
+/* MARQUEE */
+.marquee-wrap{
+  background:var(--dark);color:var(--cream);
+  padding:18px 0;overflow:hidden;white-space:nowrap;
+}
+.marquee-inner{
+  display:inline-flex;animation:marquee 20s linear infinite;
+}
+.marquee-item{
+  font-size:12px;letter-spacing:3px;text-transform:uppercase;
+  padding:0 40px;opacity:0.8;
+}
+.marquee-dot{color:var(--gold);}
+@keyframes marquee{from{transform:translateX(0);}to{transform:translateX(-50%);}};
+
+/* SECTIONS */
+section{padding:100px 48px;}
+.section-inner{max-width:1200px;margin:0 auto;}
+.section-tag{
+  font-size:11px;letter-spacing:4px;text-transform:uppercase;
+  color:var(--gold);font-weight:600;margin-bottom:16px;
+  display:flex;align-items:center;gap:12px;
+}
+.section-tag::before{content:'';width:40px;height:1px;background:var(--gold);}
+.section-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(36px,4vw,56px);font-weight:600;
+  line-height:1.1;color:var(--dark);margin-bottom:20px;
+}
+.section-title em{font-style:italic;color:var(--accent);}
+.section-sub{
+  font-size:16px;color:var(--muted);
+  line-height:1.9;max-width:560px;font-weight:300;
+}
+
+/* ABOUT */
+#about{background:var(--warm);}
+.about-grid{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:80px;align-items:center;
+}
+.about-img{
+  background:linear-gradient(135deg,var(--rose),var(--cream));
+  border-radius:4px;height:560px;
+  display:flex;align-items:center;justify-content:center;
+  position:relative;overflow:hidden;
+  border:1px solid var(--border);
+}
+.about-img-text{
+  font-family:'Cormorant Garamond',serif;
+  font-size:200px;font-weight:700;
+  color:rgba(139,111,94,0.06);
+  position:absolute;
+}
+.about-img-icon{font-size:100px;position:relative;z-index:1;}
+.about-quote{
+  font-family:'Cormorant Garamond',serif;
+  font-size:22px;font-style:italic;
+  color:var(--accent);line-height:1.7;
+  margin:32px 0;padding-left:24px;
+  border-left:2px solid var(--gold);
+}
+.about-text p{
+  font-size:16px;line-height:1.9;
+  color:var(--muted);margin-bottom:20px;
+}
+.about-values{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:16px;margin-top:32px;
+}
+.value-item{
+  padding:20px;border:1px solid var(--border);
+  border-radius:4px;background:var(--cream);
+  transition:all 0.3s;
+}
+.value-item:hover{border-color:var(--gold);transform:translateY(-3px);}
+.value-icon{font-size:24px;margin-bottom:8px;}
+.value-title{font-size:14px;font-weight:600;margin-bottom:4px;color:var(--dark);}
+.value-desc{font-size:13px;color:var(--muted);}
+
+/* SERVICES */
+#services{background:var(--cream);}
+.services-intro{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:80px;margin-bottom:64px;align-items:end;
+}
+.services-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:24px;
+}
+.service-card{
+  border:1px solid var(--border);border-radius:4px;
+  padding:40px 32px;background:var(--white);
+  transition:all 0.3s;position:relative;overflow:hidden;
+}
+.service-card::after{
+  content:'';position:absolute;
+  bottom:0;left:0;right:0;height:3px;
+  background:linear-gradient(90deg,var(--gold),var(--gold2));
+  transform:scaleX(0);transition:transform 0.3s;
+}
+.service-card:hover{transform:translateY(-6px);box-shadow:0 20px 60px rgba(44,31,23,0.08);}
+.service-card:hover::after{transform:scaleX(1);}
+.service-num{
+  font-family:'Cormorant Garamond',serif;
+  font-size:48px;font-weight:600;color:var(--border);
+  margin-bottom:16px;display:block;
+}
+.service-title{font-size:18px;font-weight:600;color:var(--dark);margin-bottom:12px;}
+.service-desc{font-size:14px;color:var(--muted);line-height:1.8;}
+.service-link{
+  display:inline-flex;align-items:center;gap:8px;
+  margin-top:20px;font-size:12px;letter-spacing:2px;
+  text-transform:uppercase;color:var(--accent);
+  text-decoration:none;font-weight:600;
+  transition:gap 0.2s;
+}
+.service-link:hover{gap:14px;}
+
+/* BLOG */
+#blog{background:var(--warm);}
+.blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;}
+.blog-card{
+  background:var(--cream);border:1px solid var(--border);
+  border-radius:4px;overflow:hidden;
+  transition:all 0.3s;cursor:pointer;
+}
+.blog-card:hover{transform:translateY(-6px);box-shadow:0 20px 60px rgba(44,31,23,0.1);}
+.blog-thumb{
+  height:200px;display:flex;align-items:center;
+  justify-content:center;font-size:48px;
+  position:relative;overflow:hidden;
+}
+.blog-thumb.b1{background:linear-gradient(135deg,#e8d5c4,#f5ede0);}
+.blog-thumb.b2{background:linear-gradient(135deg,#d4e8c4,#edf5e0);}
+.blog-thumb.b3{background:linear-gradient(135deg,#c4d4e8,#e0edf5);}
+.blog-body{padding:28px;}
+.blog-cat{
+  font-size:10px;letter-spacing:3px;text-transform:uppercase;
+  color:var(--gold);font-weight:600;margin-bottom:10px;
+}
+.blog-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:22px;font-weight:600;color:var(--dark);
+  line-height:1.3;margin-bottom:12px;
+}
+.blog-excerpt{font-size:14px;color:var(--muted);line-height:1.8;margin-bottom:20px;}
+.blog-meta{
+  display:flex;justify-content:space-between;
+  font-size:12px;color:var(--muted);
+  padding-top:16px;border-top:1px solid var(--border);
+}
+
+/* BLOG POST MODAL */
+.modal{
+  display:none;position:fixed;inset:0;z-index:200;
+  background:rgba(44,31,23,0.5);
+  backdrop-filter:blur(8px);
+  overflow-y:auto;padding:40px 20px;
+}
+.modal.open{display:flex;align-items:flex-start;justify-content:center;}
+.modal-inner{
+  background:var(--cream);border-radius:4px;
+  max-width:800px;width:100%;padding:60px;
+  position:relative;animation:modalIn 0.3s ease;
+}
+@keyframes modalIn{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
+.modal-close{
+  position:absolute;top:24px;right:24px;
+  background:none;border:none;font-size:24px;
+  cursor:pointer;color:var(--muted);
+}
+.modal-close:hover{color:var(--dark);}
+.modal-cat{
+  font-size:11px;letter-spacing:3px;text-transform:uppercase;
+  color:var(--gold);font-weight:600;margin-bottom:16px;
+}
+.modal-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(28px,4vw,42px);font-weight:600;
+  color:var(--dark);line-height:1.2;margin-bottom:16px;
+}
+.modal-meta{font-size:13px;color:var(--muted);margin-bottom:32px;padding-bottom:32px;border-bottom:1px solid var(--border);}
+.modal-body{font-size:16px;line-height:1.9;color:var(--charcoal);}
+.modal-body h2{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:600;color:var(--dark);margin:40px 0 16px;}
+.modal-body h3{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:var(--dark);margin:28px 0 12px;}
+.modal-body p{margin-bottom:20px;color:var(--muted);}
+.modal-body strong{color:var(--dark);font-weight:600;}
+.modal-body blockquote{
+  border-left:3px solid var(--gold);padding-left:24px;
+  font-family:'Cormorant Garamond',serif;font-style:italic;
+  font-size:20px;color:var(--accent);margin:32px 0;line-height:1.7;
+}
+.modal-author{
+  margin-top:48px;padding-top:32px;border-top:1px solid var(--border);
+  display:flex;align-items:center;gap:20px;
+}
+.modal-author-avatar{
+  width:56px;height:56px;border-radius:50%;
+  background:linear-gradient(135deg,var(--rose),var(--warm));
+  display:flex;align-items:center;justify-content:center;
+  font-size:24px;flex-shrink:0;
+}
+.modal-author-name{font-weight:600;font-size:15px;color:var(--dark);}
+.modal-author-title{font-size:13px;color:var(--muted);margin-top:2px;}
+
+/* BOOK A CALL */
+#call{background:var(--dark);color:var(--cream);}
+.call-inner{
+  max-width:1200px;margin:0 auto;
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:80px;align-items:center;
+}
+.call-tag{color:var(--gold2);}
+.call-tag::before{background:var(--gold2);}
+.call-title{color:var(--cream);}
+.call-title em{color:var(--gold2);}
+.call-sub{color:rgba(253,248,243,0.6);}
+.call-features{list-style:none;margin:32px 0;display:flex;flex-direction:column;gap:16px;}
+.call-features li{
+  display:flex;align-items:center;gap:16px;
+  font-size:15px;color:rgba(253,248,243,0.7);
+}
+.call-features li::before{
+  content:'✦';color:var(--gold);font-size:12px;flex-shrink:0;
+}
+.call-cards{display:flex;flex-direction:column;gap:20px;}
+.call-card{
+  border:1px solid rgba(253,248,243,0.15);
+  border-radius:4px;padding:32px;
+  transition:border-color 0.3s;
+}
+.call-card:hover{border-color:var(--gold);}
+.call-card-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:22px;font-weight:600;color:var(--cream);
+  margin-bottom:6px;
+}
+.call-card-desc{font-size:14px;color:rgba(253,248,243,0.5);margin-bottom:20px;}
+.call-card-price{
+  font-family:'Cormorant Garamond',serif;
+  font-size:36px;font-weight:600;color:var(--gold2);
+  margin-bottom:16px;
+}
+.call-card-price small{font-size:16px;opacity:0.6;}
+.btn-gold{
+  background:var(--gold);color:var(--dark);
+  padding:16px 32px;font-size:12px;
+  font-weight:700;letter-spacing:2px;text-transform:uppercase;
+  text-decoration:none;border:1px solid var(--gold);
+  transition:all 0.3s;font-family:'Jost',sans-serif;
+  display:inline-block;border-radius:2px;cursor:pointer;
+}
+.btn-gold:hover{background:transparent;color:var(--gold2);border-color:var(--gold2);}
+
+/* CONTACT */
+#contact{background:var(--cream);}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;}
+.contact-items{display:flex;flex-direction:column;gap:16px;margin-top:32px;}
+.contact-item{
+  display:flex;align-items:center;gap:16px;
+  padding:20px 24px;border:1px solid var(--border);
+  border-radius:4px;text-decoration:none;color:var(--text);
+  transition:all 0.2s;background:var(--white);
+}
+.contact-item:hover{border-color:var(--gold);transform:translateX(6px);}
+.contact-icon{
+  width:44px;height:44px;border-radius:2px;
+  background:var(--warm);border:1px solid var(--border);
+  display:flex;align-items:center;justify-content:center;
+  font-size:18px;flex-shrink:0;
+}
+.contact-label{font-size:11px;color:var(--muted);letter-spacing:1px;text-transform:uppercase;margin-bottom:2px;}
+.contact-value{font-size:14px;font-weight:500;color:var(--dark);}
+.form-wrap{
+  background:var(--warm);border:1px solid var(--border);
+  border-radius:4px;padding:48px;
+}
+.form-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:28px;font-weight:600;color:var(--dark);margin-bottom:8px;
+}
+.form-sub{font-size:14px;color:var(--muted);margin-bottom:32px;}
+.form-group{margin-bottom:20px;}
+.form-group label{
+  display:block;font-size:11px;letter-spacing:2px;
+  text-transform:uppercase;font-weight:600;
+  color:var(--muted);margin-bottom:8px;
+}
+.form-group input,
+.form-group textarea,
+.form-group select{
+  width:100%;background:var(--cream);
+  border:1px solid var(--border);border-radius:2px;
+  padding:14px 16px;color:var(--dark);
+  font-family:'Jost',sans-serif;font-size:14px;
+  outline:none;transition:border-color 0.2s;
+  resize:vertical;
+}
+.form-group input::placeholder,
+.form-group textarea::placeholder{color:var(--muted);}
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus{border-color:var(--gold);}
+.form-group textarea{min-height:120px;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.form-success{
+  display:none;text-align:center;padding:32px;
+  background:var(--cream);border-radius:4px;
+  border:1px solid var(--gold);margin-top:16px;
+}
+
+/* NEWSLETTER */
+#newsletter{
+  background:var(--warm);
+  padding:100px 48px;
+  position:relative;overflow:hidden;
+}
+#newsletter::before{
+  content:'✦';
+  position:absolute;font-size:400px;
+  font-family:'Cormorant Garamond',serif;
+  color:rgba(201,169,110,0.06);
+  top:50%;left:50%;
+  transform:translate(-50%,-50%);
+  pointer-events:none;
+}
+.newsletter-inner{
+  max-width:700px;margin:0 auto;
+  text-align:center;position:relative;z-index:1;
+}
+.newsletter-tag{justify-content:center;}
+.newsletter-title{margin-bottom:16px;}
+.newsletter-sub{
+  font-size:16px;color:var(--muted);
+  line-height:1.9;margin:0 auto 12px;
+  max-width:500px;
+}
+.newsletter-benefits{
+  display:flex;justify-content:center;
+  gap:32px;flex-wrap:wrap;
+  margin:28px 0 40px;
+}
+.newsletter-benefit{
+  display:flex;align-items:center;gap:8px;
+  font-size:13px;color:var(--muted);
+}
+.newsletter-benefit::before{content:'✦';color:var(--gold);font-size:10px;}
+.newsletter-form{
+  display:flex;gap:12px;max-width:520px;
+  margin:0 auto;flex-wrap:wrap;
+}
+.newsletter-form input{
+  flex:1;min-width:240px;
+  background:var(--white);
+  border:1px solid var(--border);
+  border-radius:2px;padding:18px 20px;
+  color:var(--dark);font-family:'Jost',sans-serif;
+  font-size:14px;outline:none;
+  transition:border-color 0.2s;
+}
+.newsletter-form input::placeholder{color:var(--muted);}
+.newsletter-form input:focus{border-color:var(--gold);}
+.newsletter-count{
+  font-size:13px;color:var(--muted);
+  margin-top:16px;font-style:italic;
+}
+.newsletter-success{
+  display:none;
+  background:var(--cream);border:1px solid var(--gold);
+  border-radius:4px;padding:28px;margin-top:20px;
+}
+.newsletter-success-icon{font-size:36px;margin-bottom:8px;}
+.newsletter-success-text{
+  font-family:'Cormorant Garamond',serif;
+  font-size:22px;font-weight:600;color:var(--dark);
+  margin-bottom:6px;
+}
+.newsletter-success-sub{font-size:14px;color:var(--muted);}
+.newsletter-topics{
+  display:flex;justify-content:center;
+  gap:10px;flex-wrap:wrap;margin:24px 0;
+}
+.newsletter-topic{
+  font-size:11px;padding:6px 14px;
+  border-radius:50px;border:1px solid var(--border);
+  color:var(--muted);background:var(--cream);
+  letter-spacing:1px;text-transform:uppercase;
+}
+
+/* FOOTER */
+footer{
+  background:var(--charcoal);color:var(--cream);
+  padding:64px 48px 32px;
+}
+.footer-inner{max-width:1200px;margin:0 auto;}
+.footer-grid{
+  display:grid;grid-template-columns:2fr 1fr 1fr;
+  gap:64px;margin-bottom:48px;
+}
+.footer-logo{
+  font-family:'Cormorant Garamond',serif;
+  font-size:26px;font-weight:600;color:var(--cream);
+  margin-bottom:16px;display:block;
+}
+.footer-desc{font-size:14px;color:rgba(253,248,243,0.5);line-height:1.8;max-width:300px;}
+.footer-col-title{
+  font-size:11px;letter-spacing:3px;text-transform:uppercase;
+  color:var(--gold);font-weight:600;margin-bottom:20px;
+}
+.footer-links{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.footer-links a{font-size:14px;color:rgba(253,248,243,0.5);text-decoration:none;transition:color 0.2s;}
+.footer-links a:hover{color:var(--cream);}
+.footer-bottom{
+  padding-top:32px;border-top:1px solid rgba(253,248,243,0.1);
+  display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;
+}
+.footer-copy{font-size:12px;color:rgba(253,248,243,0.3);}
+
+/* TOAST */
+.toast{
+  position:fixed;bottom:32px;right:32px;z-index:999;
+  background:var(--dark);color:var(--cream);
+  border:1px solid var(--gold);border-radius:4px;
+  padding:16px 24px;font-size:14px;
+  transform:translateY(80px);opacity:0;
+  transition:all 0.3s ease;
+}
+.toast.show{transform:translateY(0);opacity:1;}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(32px);transition:opacity 0.8s ease,transform 0.8s ease;}
+.reveal.visible{opacity:1;transform:translateY(0);}
+
+/* RESPONSIVE */
+@media(max-width:1024px){
+  .hero-inner,.about-grid,.contact-grid,.call-inner,.services-intro{grid-template-columns:1fr;}
+  .hero::before{display:none;}
+  .hero-avatar-wrap{width:100%;height:320px;}
+  .hero-badge{bottom:20px;left:20px;}
+  .footer-grid{grid-template-columns:1fr 1fr;}
+}
+@media(max-width:768px){
+  nav{padding:20px 24px;}
+  .nav-links,.nav-btn{display:none;}
+  .hamburger{display:flex;}
+  section{padding:60px 24px;}
+  .services-grid,.blog-grid{grid-template-columns:1fr;}
+  .about-values{grid-template-columns:1fr;}
+  .form-row{grid-template-columns:1fr;}
+  .footer-grid{grid-template-columns:1fr;}
+  .modal-inner{padding:32px 24px;}
+  .hero{padding:100px 24px 60px;}
+}
+</style>
+</head>
+<body>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="close-btn" onclick="toggleMenu()">×</button>
+  <a href="#about" onclick="toggleMenu()">About</a>
+  <a href="#services" onclick="toggleMenu()">Services</a>
+  <a href="#blog" onclick="toggleMenu()">Blog</a>
+  <a href="#call" onclick="toggleMenu()">Work With Me</a>
+  <a href="#newsletter" onclick="toggleMenu()">Newsletter</a>
+  <a href="#contact" onclick="toggleMenu()">Contact</a>
+</div>
+
+<!-- BLOG POST MODAL -->
+<div class="modal" id="blogModal">
+  <div class="modal-inner">
+    <button class="modal-close" onclick="closeModal()">×</button>
+    <div class="modal-cat" id="modalCat"></div>
+    <h1 class="modal-title" id="modalTitle"></h1>
+    <div class="modal-meta" id="modalMeta"></div>
+    <div class="modal-body" id="modalBody"></div>
+    <div class="modal-author">
+      <div class="modal-author-avatar">👨‍💼</div>
+      <div>
+        <div class="modal-author-name">Muhammad Ubaid Khan</div>
+        <div class="modal-author-title">BI Consultant & Content Writer</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a href="#" class="nav-logo">Muhammad Ubaid Khan</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#blog">Blog</a></li>
+    <li><a href="#call">Work With Me</a></li>
+    <li><a href="#newsletter">Newsletter</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="#call" class="nav-btn">Book a Call</a>
+  <button class="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- HERO -->
+<section style="padding:0;">
+  <div class="hero">
+    <div class="hero-inner">
+      <div class="hero-content">
+        <div class="hero-tag">BI Consultant & Content Writer</div>
+        <h1>Where Data Meets <em>Powerful</em> Storytelling</h1>
+        <p class="hero-sub">I help professionals and organizations transform complex data into clear insights — and turn their expertise into compelling content that builds authority, attracts clients, and creates impact.</p>
+        <div class="hero-btns">
+          <a href="#blog" class="btn-dark">Read My Blog</a>
+          <a href="#call" class="btn-outline">Work With Me</a>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <span class="hero-stat-num">50+</span>
+            <span class="hero-stat-label">Projects Delivered</span>
+          </div>
+          <div class="hero-stat">
+            <span class="hero-stat-num">30+</span>
+            <span class="hero-stat-label">Happy Clients</span>
+          </div>
+          <div class="hero-stat">
+            <span class="hero-stat-num">5+</span>
+            <span class="hero-stat-label">Years Experience</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero-right">
+        <div class="hero-avatar-wrap">
+          <div class="hero-avatar-icon">👨‍💼</div>
+        </div>
+        <div class="hero-badge">
+          <span class="hero-badge-num">1000+</span>
+          <span class="hero-badge-text">LinkedIn Followers</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-wrap">
+  <div class="marquee-inner">
+    <span class="marquee-item">Power BI</span><span class="marquee-dot">✦</span>
+    <span class="marquee-item">Data Analytics</span><span class="marquee-dot">✦</span>
+    <span class="marquee-item">Content Writing</span><span class="marquee-dot">✦</span>
+    <span class="marquee-item">BI Consulting</span><span class="marquee-dot">✦</span>
+    <span class="marquee-item">Motivation</span><span class="marquee-dot">✦</span>
+    <span class="marquee-item">Leadership</span><span class="marquee-dot">✦</span>
+    <span class="marquee-item">Career Growth</span><span class="marquee-dot">✦</span>
+    <span class="marquee-item">Business Strategy</span><span class="marquee-dot">✦</span>
+    <span class="marquee-item">Power BI</span><span class="marquee-dot">✦</span>
+    <span class="marquee-item">Data Analytics</span><span class="marquee-dot">✦</span>
+    <span class="marquee-item">Content Writing</span><span class="marquee-dot">✦</span>
+    <span class="marquee-item">BI Consulting</span><span class="marquee-dot">✦</span>
+    <span class="marquee-item">Motivation</span><span class="marquee-dot">✦</span>
+    <span class="marquee-item">Leadership</span><span class="marquee-dot">✦</span>
+    <span class="marquee-item">Career Growth</span><span class="marquee-dot">✦</span>
+    <span class="marquee-item">Business Strategy</span><span class="marquee-dot">✦</span>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-inner">
+    <div class="about-grid reveal">
+      <div class="about-img">
+        <div class="about-img-text">MUK</div>
+        <div class="about-img-icon">👨‍💼</div>
+      </div>
+      <div class="about-text">
+        <div class="section-tag">About Me</div>
+        <h2 class="section-title">I See the Story <em>Behind</em> Your Data</h2>
+        <div class="about-quote">"Data without context is just noise. My job is to turn that noise into a narrative that drives real decisions."</div>
+        <p>I'm Muhammad Ubaid Khan — a certified BI Consultant, Power BI expert, and content writer based in Pakistan. For over 5 years I have been helping businesses, professionals, and organizations make sense of their data and communicate their expertise to the world.</p>
+        <p>My work sits at the intersection of two powerful disciplines: business intelligence and storytelling. I build dashboards that executives actually use — and I write content that audiences actually read.</p>
+        <p>Beyond the technical work, I am passionate about helping people grow — in their careers, their confidence, and their impact. That is why I write about motivation, consistency, and strategy alongside data and analytics.</p>
+        <div class="about-values">
+          <div class="value-item">
+            <div class="value-icon">📊</div>
+            <div class="value-title">Data Clarity</div>
+            <div class="value-desc">Making complex data simple and actionable</div>
+          </div>
+          <div class="value-item">
+            <div class="value-icon">✍️</div>
+            <div class="value-title">Authentic Voice</div>
+            <div class="value-desc">Writing that connects and converts</div>
+          </div>
+          <div class="value-item">
+            <div class="value-icon">🎯</div>
+            <div class="value-title">Strategic Focus</div>
+            <div class="value-desc">Every insight tied to real outcomes</div>
+          </div>
+          <div class="value-item">
+            <div class="value-icon">🌍</div>
+            <div class="value-title">Global Reach</div>
+            <div class="value-desc">Serving clients across 10+ countries</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="section-inner">
+    <div class="services-intro reveal">
+      <div>
+        <div class="section-tag">What I Do</div>
+        <h2 class="section-title">Services Designed for <em>Impact</em></h2>
+      </div>
+      <p class="section-sub">Whether you need a powerful dashboard, a compelling blog, or a content strategy — I bring clarity, precision, and purpose to everything I create.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <span class="service-num">01</span>
+        <div class="service-title">Power BI Development</div>
+        <div class="service-desc">Custom dashboards and reports that transform raw data into decisions. From executive overviews to operational deep-dives — built to impress and inform.</div>
+        <a href="#contact" class="service-link">Get Started →</a>
+      </div>
+      <div class="service-card reveal">
+        <span class="service-num">02</span>
+        <div class="service-title">Content Writing</div>
+        <div class="service-desc">Blog posts, articles, and newsletters written with authority and clarity. I help professionals build their audience and establish their voice online.</div>
+        <a href="#contact" class="service-link">Get Started →</a>
+      </div>
+      <div class="service-card reveal">
+        <span class="service-num">03</span>
+        <div class="service-title">BI Strategy & Consulting</div>
+        <div class="service-desc">Not sure where to start with data? I will audit your current setup, identify opportunities, and build a roadmap to a world-class BI ecosystem.</div>
+        <a href="#contact" class="service-link">Get Started →</a>
+      </div>
+      <div class="service-card reveal">
+        <span class="service-num">04</span>
+        <div class="service-title">LinkedIn Content Strategy</div>
+        <div class="service-desc">Monthly LinkedIn content packages that grow your following, build your brand, and attract the clients and opportunities you deserve.</div>
+        <a href="#contact" class="service-link">Get Started →</a>
+      </div>
+      <div class="service-card reveal">
+        <span class="service-num">05</span>
+        <div class="service-title">Power BI Training</div>
+        <div class="service-desc">1-on-1 and group Power BI training sessions. From complete beginners to advanced analysts — I will get your team self-sufficient and confident.</div>
+        <a href="#call" class="service-link">Book a Session →</a>
+      </div>
+      <div class="service-card reveal">
+        <span class="service-num">06</span>
+        <div class="service-title">Data Modeling & DAX</div>
+        <div class="service-desc">Advanced data modeling, DAX optimization, and Power Query solutions that make your reports fast, accurate, and scalable.</div>
+        <a href="#contact" class="service-link">Get Started →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BLOG -->
+<section id="blog">
+  <div class="section-inner">
+    <div class="reveal" style="margin-bottom:48px;">
+      <div class="section-tag">My Writing</div>
+      <h2 class="section-title">Insights, Ideas & <em>Inspiration</em></h2>
+      <p class="section-sub">I write about data analytics, business intelligence, motivation, career growth, and the mindset shifts that create lasting success.</p>
+    </div>
+    <div class="blog-grid">
+      <div class="blog-card reveal" onclick="openBlog('motivation')">
+        <div class="blog-thumb b1">💪</div>
+        <div class="blog-body">
+          <div class="blog-cat">Motivation & Mindset</div>
+          <div class="blog-title">The Four Pillars of Unstoppable Success</div>
+          <div class="blog-excerpt">Motivation. Consistency. Decision. Focus. These are not buzzwords — these are the four pillars that separate people who dream from people who achieve.</div>
+          <div class="blog-meta">
+            <span>Muhammad Ubaid Khan</span>
+            <span>8 min read</span>
+          </div>
+        </div>
+      </div>
+      <div class="blog-card reveal" onclick="openBlog('universities')">
+        <div class="blog-thumb b3">🎓</div>
+        <div class="blog-body">
+          <div class="blog-cat">Data Analytics</div>
+          <div class="blog-title">How Universities Can Use Data to Make Better Decisions</div>
+          <div class="blog-excerpt">Most universities are sitting on a gold mine of data they never use. Here is how data analytics is transforming higher education — and how yours can too.</div>
+          <div class="blog-meta">
+            <span>Muhammad Ubaid Khan</span>
+            <span>10 min read</span>
+          </div>
+        </div>
+      </div>
+      <div class="blog-card reveal" onclick="openBlog('coming')">
+        <div class="blog-thumb b2">✍️</div>
+        <div class="blog-body">
+          <div class="blog-cat">Career Growth</div>
+          <div class="blog-title">How to Build a Career in Data from Scratch in 2026</div>
+          <div class="blog-excerpt">You do not need a computer science degree. You do not need years of experience. You need the right skills, the right mindset, and a plan. Here is mine.</div>
+          <div class="blog-meta">
+            <span>Muhammad Ubaid Khan</span>
+            <span>Coming Soon</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BOOK A CALL -->
+<section id="call" style="padding:100px 48px;">
+  <div class="call-inner">
+    <div class="reveal">
+      <div class="section-tag call-tag">Work With Me</div>
+      <h2 class="section-title call-title">Let's Build Something <em>Meaningful</em> Together</h2>
+      <p class="section-sub call-sub">Whether you need data clarity or content that converts — I am here to help you get there faster.</p>
+      <ul class="call-features">
+        <li>Power BI dashboard review and strategy</li>
+        <li>Content writing and editorial planning</li>
+        <li>LinkedIn growth and personal branding</li>
+        <li>BI consulting and data roadmapping</li>
+        <li>1-on-1 Power BI mentoring sessions</li>
+      </ul>
+    </div>
+    <div class="call-cards reveal">
+      <div class="call-card">
+        <div class="call-card-title">Discovery Call</div>
+        <div class="call-card-desc">A focused 15-minute session to explore your needs</div>
+        <div class="call-card-price">FREE <small>/ 15 min</small></div>
+        <a href="https://calendly.com" target="_blank" class="btn-gold">Book Your Free Call</a>
+      </div>
+      <div class="call-card">
+        <div class="call-card-title">Strategy Session</div>
+        <div class="call-card-desc">Deep dive into your data or content strategy</div>
+        <div class="call-card-price">$49 <small>/ 60 min</small></div>
+        <a href="https://calendly.com" target="_blank" class="btn-gold">Book a Session</a>
+      </div>
+      <div class="call-card">
+        <div class="call-card-title">Monthly Retainer</div>
+        <div class="call-card-desc">Ongoing content writing or BI consulting support</div>
+        <div class="call-card-price">Custom <small>/ month</small></div>
+        <a href="#contact" class="btn-gold">Let's Talk</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-inner">
+    <div class="contact-grid">
+      <div class="reveal">
+        <div class="section-tag">Get In Touch</div>
+        <h2 class="section-title">Let's Start a <em>Conversation</em></h2>
+        <p class="section-sub">Have a project, an idea, or just want to say hello? I respond to every message within 24 hours.</p>
+        <div class="contact-items">
+          <a href="mailto:muhammadubaidkhan7@gmail.com" class="contact-item">
+            <div class="contact-icon">📧</div>
+            <div>
+              <div class="contact-label">Email</div>
+              <div class="contact-value">muhammadubaidkhan7@gmail.com</div>
+            </div>
+          </a>
+          <a href="tel:+923001234567" class="contact-item">
+            <div class="contact-icon">📞</div>
+            <div>
+              <div class="contact-label">Phone & WhatsApp</div>
+              <div class="contact-value">+92 300 123 4567</div>
+            </div>
+          </a>
+          <a href="https://linkedin.com" target="_blank" class="contact-item">
+            <div class="contact-icon">💼</div>
+            <div>
+              <div class="contact-label">LinkedIn</div>
+              <div class="contact-value">Muhammad Ubaid Khan</div>
+            </div>
+          </a>
+          <a href="https://calendly.com" target="_blank" class="contact-item">
+            <div class="contact-icon">📅</div>
+            <div>
+              <div class="contact-label">Book a Call</div>
+              <div class="contact-value">Free 15-min discovery session</div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="form-wrap reveal">
+        <div class="form-title">Send a Message</div>
+        <div class="form-sub">I will get back to you within 24 hours.</div>
+        <div id="contactForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label>First Name</label>
+              <input type="text" id="fname" placeholder="John"/>
+            </div>
+            <div class="form-group">
+              <label>Last Name</label>
+              <input type="text" id="lname" placeholder="Doe"/>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Email Address</label>
+            <input type="email" id="femail" placeholder="john@email.com"/>
+          </div>
+          <div class="form-group">
+            <label>I Need Help With</label>
+            <select id="fsubject">
+              <option value="">Select a service...</option>
+              <option>Power BI Dashboard Development</option>
+              <option>Content Writing & Blogging</option>
+              <option>LinkedIn Content Strategy</option>
+              <option>BI Strategy & Consulting</option>
+              <option>Power BI Training</option>
+              <option>General Inquiry</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Your Message</label>
+            <textarea id="fmessage" placeholder="Tell me about your project..."></textarea>
+          </div>
+          <button class="btn-dark" style="width:100%;padding:18px;" onclick="sendEmail()">Send Message</button>
+        </div>
+        <div class="form-success" id="formSuccess">
+          <div style="font-size:40px;margin-bottom:12px;">✦</div>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;margin-bottom:8px;">Message Received</div>
+          <div style="font-size:14px;color:var(--muted);">Thank you! I will be in touch within 24 hours.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section id="newsletter">
+  <div class="newsletter-inner reveal">
+    <div class="section-tag newsletter-tag">Stay Informed</div>
+    <h2 class="section-title newsletter-title">Never Miss an <em>Insight</em></h2>
+    <p class="newsletter-sub">Join professionals who receive my weekly two-minute newsletter on Power BI, data strategy, career growth, and the mindset shifts that create real success.</p>
+    <div class="newsletter-topics">
+      <span class="newsletter-topic">📊 Power BI</span>
+      <span class="newsletter-topic">🧠 Mindset</span>
+      <span class="newsletter-topic">💼 Career</span>
+      <span class="newsletter-topic">📈 Strategy</span>
+      <span class="newsletter-topic">✍️ Writing</span>
+      <span class="newsletter-topic">🚀 Growth</span>
+    </div>
+    <div class="newsletter-benefits">
+      <div class="newsletter-benefit">Weekly — every Monday</div>
+      <div class="newsletter-benefit">2 minutes to read</div>
+      <div class="newsletter-benefit">Always free</div>
+      <div class="newsletter-benefit">No spam, ever</div>
+    </div>
+    <div class="newsletter-form" id="newsletterForm">
+      <input type="email" id="newsletter-email" placeholder="Enter your email address..."/>
+      <button class="btn-dark" style="padding:18px 32px;white-space:nowrap;" onclick="subscribeNewsletter()">Subscribe ✦</button>
+    </div>
+    <div class="newsletter-count">✦ Join 500+ professionals already subscribed</div>
+    <div class="newsletter-success" id="newsletterSuccess">
+      <div class="newsletter-success-icon">✦</div>
+      <div class="newsletter-success-text">Welcome Aboard!</div>
+      <div class="newsletter-success-sub">Thank you for subscribing. Your first newsletter arrives Monday. Check your email to confirm your subscription.</div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div>
+        <span class="footer-logo">Muhammad Ubaid Khan</span>
+        <p class="footer-desc">BI Consultant, Power BI Expert & Content Writer. Turning data into decisions and expertise into impact — one insight at a time.</p>
+      </div>
+      <div>
+        <div class="footer-col-title">Quick Links</div>
+        <ul class="footer-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#blog">Blog</a></li>
+          <li><a href="#newsletter">Newsletter</a></li>
+          <li><a href="#call">Work With Me</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Connect</div>
+        <ul class="footer-links">
+          <li><a href="mailto:muhammadubaidkhan7@gmail.com">Email Me</a></li>
+          <li><a href="https://linkedin.com" target="_blank">LinkedIn</a></li>
+          <li><a href="https://wa.me/923001234567" target="_blank">WhatsApp</a></li>
+          <li><a href="https://calendly.com" target="_blank">Book a Call</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2026 Muhammad Ubaid Khan. All rights reserved.</span>
+      <span class="footer-copy">Built with passion using HTML, CSS & JavaScript ✦</span>
+    </div>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script>
+// Blog content
+const blogs = {
+  motivation: {
+    cat: 'Motivation & Mindset',
+    title: 'The Four Pillars of Unstoppable Success: Motivation, Consistency, Decision, and Focus',
+    meta: 'By Muhammad Ubaid Khan · April 2026 · 8 min read',
+    body: `
+      <h2>The Day Everything Changed</h2>
+      <p>I remember sitting in my room, jobless, staring at a blank screen. No income. No clients. No clear path forward. I had the skills. I had the knowledge. I had the ambition. But I had one problem that most people never talk about — I was waiting. Waiting to feel ready. Waiting for the perfect moment.</p>
+      <p>That moment never came. What came instead was a simple, brutal realization: <strong>Nobody is coming to save you. You have to save yourself.</strong></p>
+      <p>And the only way to do that is to master four things that every successful person has had to master. Motivation. Consistency. Decision. Focus.</p>
+
+      <h2>Pillar One: Motivation — The Spark That Starts Everything</h2>
+      <p>Here is the most important thing you need to understand about motivation: <strong>It will not always be there.</strong> Motivation is an emotion. And emotions come and go like the weather. You cannot build a career on something that disappears every time things get hard.</p>
+      <blockquote>Motivation follows action — not the other way around. You do not wait until you feel motivated before you act. Successful people act first and let the motivation follow.</blockquote>
+      <p>Surface motivation sounds like: <em>I want to make money.</em> Deep motivation sounds like: <em>I want to give my family a life they deserve.</em> Surface motivation runs out after weeks. Deep motivation carries you through years of struggle.</p>
+
+      <h2>Pillar Two: Consistency — The Bridge Between Dreams and Reality</h2>
+      <p>I have seen brilliant people fail. People with exceptional talent who achieved nothing because they could not show up consistently. I have also seen ordinary people achieve extraordinary things — simply because they showed up every single day and refused to quit.</p>
+      <p><strong>Consistency is the great equalizer.</strong> If you improve by 1% every day for one year — you become 37 times better than you were on January 1st. This is the compound effect. And it is the reason consistency beats intensity every single time.</p>
+      <p><strong>Three rules:</strong> Start smaller than you think you should. Never miss twice. Measure your streak, not just your results.</p>
+
+      <h2>Pillar Three: Decision — The Moment That Defines Everything</h2>
+      <p>Indecision has a price. Every day you spend not deciding is a day you spend not moving. <strong>A wrong decision, acted on quickly and corrected, beats the perfect decision that never gets made.</strong> You cannot steer a parked car.</p>
+      <p>Use the 10/10/10 question: How will I feel about this decision in 10 minutes? In 10 months? In 10 years? This one question cuts through almost all short-term fear and emotion.</p>
+
+      <h2>Pillar Four: Focus — The Superpower of the 21st Century</h2>
+      <p>The average person checks their phone 96 times per day. In this environment, the ability to focus deeply on one thing is becoming one of the rarest and most valuable skills on the planet. <strong>The people who master focus will build the businesses, write the books, and create the breakthroughs that define the next decade. Everyone else will scroll.</strong></p>
+      <p>Every morning ask yourself: What is the ONE thing I can do today such that by doing it, everything else becomes easier or unnecessary? Do that thing first. Before email. Before social media. Before anything else.</p>
+
+      <h2>The Message I Want to Leave You With</h2>
+      <blockquote>You don't need to see the whole staircase. You just need to take the first step.</blockquote>
+      <p>Start today. Not tomorrow. Not Monday. Write the first post. Send the first message. Take the first step. The motivation will come after you start. The consistency will build after you begin. Everything starts with one moment of courage — the courage to begin. <strong>That moment is right now.</strong></p>
+    `
+  },
+  universities: {
+    cat: 'Data Analytics',
+    title: 'How Universities Can Use Data to Make Better Decisions',
+    meta: 'By Muhammad Ubaid Khan · April 2026 · 10 min read',
+    body: `
+      <h2>Introduction</h2>
+      <p>Imagine a university where student dropouts are predicted before they happen. Where course schedules are designed using real attendance patterns. Where budget decisions are backed by hard numbers — not gut feelings. This is not a distant future. This is what data-driven universities are doing right now.</p>
+      <p>Yet most universities still rely on outdated spreadsheets, disconnected systems, and instinct-based decision making. The result? Missed opportunities, wasted budgets, and students who fall through the cracks.</p>
+
+      <h2>Why Universities Are Sitting on a Gold Mine of Data</h2>
+      <p>Every single day, a university generates enormous amounts of data: student enrollment and attendance records, academic performance and grades, library usage, financial aid data, faculty performance, campus facility usage, alumni employment outcomes, and online learning engagement.</p>
+      <p>The problem is not a lack of data. The problem is that most universities do not know how to use it. According to a 2024 EDUCAUSE report, only 28% of higher education institutions describe themselves as truly data-driven.</p>
+
+      <h2>Student Success and Retention</h2>
+      <p>Student dropout is one of the most expensive problems a university faces. The average cost of losing one student can exceed $30,000. By analyzing patterns in attendance, assignment submission rates, grade trends, and library visits, universities can identify at-risk students weeks before they drop out.</p>
+      <blockquote>Georgia State University used predictive analytics to identify over 800 risk factors for student dropout — resulting in a 21% increase in graduation rates over six years.</blockquote>
+
+      <h2>Academic Program Planning</h2>
+      <p>Which programs are growing? Which are declining? Without data, most universities answer these questions based on assumption — and get it wrong. Data analytics gives academic planners a real-time picture of enrollment trends, student satisfaction, graduate employment rates, and program ROI.</p>
+
+      <h2>Financial Planning and Resource Allocation</h2>
+      <p>A well-designed financial dashboard — built in tools like Microsoft Power BI — can give university CFOs a complete picture of institutional finances in seconds, rather than waiting weeks for manual reports. Data-driven financial planning helps track spending in real time, identify budget overruns, optimize facility costs, and model different financial scenarios.</p>
+
+      <h2>The Tools Making This Possible</h2>
+      <p>Microsoft Power BI is one of the most powerful and widely used analytics platforms in higher education. It connects to virtually any data source — student information systems, financial platforms, HR systems — and transforms raw data into interactive dashboards anyone can understand.</p>
+
+      <h2>A Simple Framework to Get Started</h2>
+      <p><strong>Step 1:</strong> Define your questions — what do you wish you knew? <strong>Step 2:</strong> Audit your data — identify what you already have. <strong>Step 3:</strong> Build your first dashboard — start small, answer one question. <strong>Step 4:</strong> Act on the insights — data without action is just information.</p>
+
+      <h2>Conclusion</h2>
+      <blockquote>The universities that thrive in the next decade will be those that treat data as a strategic asset — not an afterthought.</blockquote>
+      <p>The question is no longer whether universities should use data. The question is: how quickly can they start? If you are a university administrator or academic leader looking to begin your data analytics journey, I would love to help.</p>
+    `
+  },
+  coming: {
+    cat: 'Career Growth',
+    title: 'How to Build a Career in Data from Scratch in 2026',
+    meta: 'By Muhammad Ubaid Khan · Coming Soon',
+    body: `
+      <p style="text-align:center;padding:60px 0;">
+        <span style="font-size:64px;">✍️</span><br/><br/>
+        <strong style="font-family:'Cormorant Garamond',serif;font-size:28px;color:var(--dark);">This article is coming soon.</strong><br/><br/>
+        <span style="color:var(--muted);">Subscribe to my newsletter to be the first to read it.</span><br/><br/>
+        <a href="#contact" onclick="closeModal()" style="display:inline-block;margin-top:16px;" class="btn-dark">Get Notified</a>
+      </p>
+    `
+  }
+};
+
+function openBlog(id) {
+  const blog = blogs[id];
+  document.getElementById('modalCat').textContent = blog.cat;
+  document.getElementById('modalTitle').textContent = blog.title;
+  document.getElementById('modalMeta').textContent = blog.meta;
+  document.getElementById('modalBody').innerHTML = blog.body;
+  document.getElementById('blogModal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+  document.getElementById('blogModal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+// Close modal on backdrop click
+document.getElementById('blogModal').addEventListener('click', function(e) {
+  if(e.target === this) closeModal();
+});
+
+// Mobile menu
+function toggleMenu() {
+  document.getElementById('mobileMenu').classList.toggle('open');
+}
+
+// Scroll reveal
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if(e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+  });
+}, {threshold: 0.1});
+reveals.forEach(r => observer.observe(r));
+
+// Toast
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 3000);
+}
+
+// Contact form
+function sendEmail() {
+  const name = document.getElementById('fname').value.trim();
+  const email = document.getElementById('femail').value.trim();
+  const subject = document.getElementById('fsubject').value;
+  const message = document.getElementById('fmessage').value.trim();
+  if(!name) { showToast('Please enter your name'); return; }
+  if(!email || !email.includes('@')) { showToast('Please enter a valid email'); return; }
+  if(!subject) { showToast('Please select a service'); return; }
+  if(!message) { showToast('Please enter your message'); return; }
+  const ms = encodeURIComponent(`[Website] ${subject} — from ${name}`);
+  const mb = encodeURIComponent(`Hi Muhammad Ubaid,\n\nName: ${name}\nEmail: ${email}\nSubject: ${subject}\n\nMessage:\n${message}\n\n---\nSent from your website.`);
+  window.location.href = `mailto:muhammadubaidkhan7@gmail.com?subject=${ms}&body=${mb}`;
+  document.getElementById('contactForm').style.display = 'none';
+  document.getElementById('formSuccess').style.display = 'block';
+}
+
+// Newsletter subscribe
+function subscribeNewsletter() {
+  const email = document.getElementById('newsletter-email').value.trim();
+  if(!email || !email.includes('@')) {
+    showToast('⚠️ Please enter a valid email address');
+    return;
+  }
+  // Open mailto to notify yourself of new subscriber
+  const subject = encodeURIComponent('New Newsletter Subscriber!');
+  const body = encodeURIComponent(`New subscriber: ${email}\n\nAdd them to your newsletter list.`);
+  window.location.href = `mailto:muhammadubaidkhan7@gmail.com?subject=${subject}&body=${body}`;
+  document.getElementById('newsletterForm').style.display = 'none';
+  document.getElementById('newsletterCount') && (document.getElementById('newsletterCount').style.display = 'none');
+  document.getElementById('newsletterSuccess').style.display = 'block';
+  showToast('✦ Thank you for subscribing!');
+}
+
+// Nav scroll
+window.addEventListener('scroll', () => {
+  const nav = document.getElementById('navbar');
+  nav.style.padding = window.scrollY > 50 ? '16px 48px' : '24px 48px';
+});
+</script>
+</body>
+</html>
